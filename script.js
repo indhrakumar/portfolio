@@ -1,20 +1,31 @@
 const menuBox = document.getElementById("menu-box");
 const btnMenu = document.getElementById("btnmenu");
 const closemenu = document.getElementById("closemenu");
-const menuclose = menuBox.querySelectorAll("a");
-menuclose.forEach((link) => {
-  link.addEventListener("click", () => {
-    menuBox.classList.add("translate-x-[calc(100%+30px)]");
-  });
+const menuLinks = document.querySelectorAll("#menu-box a");
+btnMenu.style.cursor = "pointer";
+btnMenu.addEventListener("click", openMenu);
+closemenu.addEventListener("click", closeMenu);
+//click links to close menu
+menuLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
 });
-btnMenu.addEventListener("click", () => {
-  menuBox.classList.remove("translate-x-[calc(100%+30px)]");
+// Open and close menu functions
+function openMenu() {
+  menuBox.classList.remove(
+    "translate-x-[120%]",
+    "opacity-0",
+    "pointer-events-none",
+  );
   menuBox.classList.add("translate-x-0");
-});
-closemenu.addEventListener("click", () => {
+}
+function closeMenu() {
   menuBox.classList.remove("translate-x-0");
-  menuBox.classList.add("translate-x-[calc(100%+30px)]");
-});
+  menuBox.classList.add(
+    "translate-x-[120%]",
+    "opacity-0",
+    "pointer-events-none",
+  );
+}
 const filterBtns = document.querySelectorAll(".filter-btn");
 const categories = document.querySelectorAll(".skill-category");
 
