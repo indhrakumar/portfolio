@@ -90,4 +90,24 @@ cards.forEach((card) => {
     clearTimeout(hoverTimeout);
   });
 });
+//logo flip
+const logo = document.getElementById("logo");
+let toggle = false;
+logo.addEventListener("click", () => {
+  logo.classList.add("rotate-img");
+  if (toggle) {
+    logo.src = logo.dataset.img1;
+    logo.classList.remove("h-full", "w-full");
+    logo.classList.add("h-[98%]", "w-[98%]", "mt-1");
+  } else {
+    logo.classList.remove("h-[75%]", "w-[75%]", "mt-1");
+    logo.classList.add("h-full", "w-full");
+    logo.src = logo.dataset.img2;
+  }
+  toggle = !toggle;
+  setTimeout(() => {
+    logo.classList.remove("rotate-img");
+  }, 1000);
+});
+
 
