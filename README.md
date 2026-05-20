@@ -11,4 +11,4 @@ Personal portfolio website built using HTML, Tailwind CSS, and JavaScript.
 - Mobile friendly
 
 ## Live Demo
-https://indhrakumar.github.io/
+https://indhrakumar.github.io/portfolio
