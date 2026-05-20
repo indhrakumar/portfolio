@@ -97,11 +97,7 @@ logo.addEventListener("click", () => {
   logo.classList.add("rotate-img");
   if (toggle) {
     logo.src = logo.dataset.img1;
-    logo.classList.remove("h-full", "w-full");
-    logo.classList.add("h-[98%]", "w-[98%]", "mt-1");
   } else {
-    logo.classList.remove("h-[75%]", "w-[75%]", "mt-1");
-    logo.classList.add("h-full", "w-full");
     logo.src = logo.dataset.img2;
   }
   toggle = !toggle;
