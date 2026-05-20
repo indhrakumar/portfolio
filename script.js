@@ -105,5 +105,3 @@ logo.addEventListener("click", () => {
     logo.classList.remove("rotate-img");
   }, 1000);
 });
-
-
