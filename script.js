@@ -90,28 +90,4 @@ cards.forEach((card) => {
     clearTimeout(hoverTimeout);
   });
 });
-// Intro animation
-const intro = document.getElementById("intro");
 
-const video = document.getElementById("introVideo");
-
-let faded = false;
-
-video.addEventListener("timeupdate", () => {
-  const percent = (video.currentTime / video.duration) * 100;
-
-  // 90% reach aana
-  if (percent >= 90 && !faded) {
-    faded = true;
-
-    intro.style.transition = "opacity 1.5s ease";
-    //added
-    intro.style.scale = "200%";
-
-    intro.style.opacity = "0";
-
-    setTimeout(() => {
-      intro.style.display = "none";
-    }, 1500);
-  }
-});
