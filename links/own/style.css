@@ -1,0 +1,112 @@
+.link {
+  position: relative;
+  color: cyan !important;
+  text-shadow: 0 0 15px cyan;
+  transition: 0.3s;
+}
+.carousel-item {
+  aspect-ratio: 16/7;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.strike {
+  transform: translateY(10px);
+  font-size: 12px;
+}
+.offer {
+  padding: 3px;
+  color: black;
+  background-color: aqua;
+  border-radius: 5px;
+  font-size: small;
+  line-height: 15px;
+  right: 0;
+  top: 0;
+}
+.badge {
+  padding: 3px;
+  background-color: red;
+  border-radius: 25px;
+  font-size: small;
+  left: 10px;
+  top: 5px;
+}
+.badge-sec {
+  left: 10px;
+  top: 27px;
+}
+.product-img {
+  background-color: white;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card {
+  color: rgb(32, 30, 30) !important;
+  background: rgb(53, 52, 52);
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 0 20px black;
+  transition: 0.3s;
+}
+.card-title,
+.card-title p,
+.card-title h6 {
+  margin-bottom: 0 !important;
+}
+.card:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.626);
+}
+.link::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: -4px;
+  left: 0;
+  background: cyan;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: 0.3s;
+}
+.link:hover::after {
+  transform: scaleX(1) !important;
+}
+
+.link:hover {
+  color: cyan !important;
+  text-shadow: 0 0 20px cyan !important;
+}
+.textarea {
+  resize: none;
+}
+.send {
+  width: 200px;
+  justify-content: center;
+}
+.drop-menu li a {
+  color: rgb(255, 98, 0) !important;
+  text-shadow: 0 0 10px rgb(255, 98, 0);
+}
+.drop-menu li a:hover {
+  background: transparent;
+  color: rgb(217, 62, 62) !important;
+  text-shadow: 0 0 15px rgb(217, 62, 62);
+}
+.drop-menu {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(50px);
+}
+.card:has(.btn:hover) {
+  box-shadow: 0 0 20px green;
+}
