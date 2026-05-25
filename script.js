@@ -105,3 +105,16 @@ logo.addEventListener("click", () => {
     logo.classList.remove("rotate-img");
   }, 1000);
 });
+//Typing effect
+let typed = new Typed(".text-animation", {
+  strings: [
+    "Frontend Developer",
+    "FullStack Developer",
+    "Java Developer",
+    "Web Designer",
+  ],
+  typeSpeed: 80,
+  backSpeed: 50,
+  backDelay: 1500,
+  loop: true,
+});
