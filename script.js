@@ -118,3 +118,59 @@ let typed = new Typed(".text-animation", {
   backDelay: 1500,
   loop: true,
 });
+//education
+
+const education = document.querySelector("#education");
+
+const items = education.querySelectorAll(
+  ".timeline-dot, .timeline-line, .edu-card",
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // reset
+        items.forEach((item) => {
+          item.classList.remove("animate");
+        });
+
+        // reflow trick
+        void education.offsetWidth;
+
+        // animate one by one
+        items.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add("animate");
+          }, index * 300);
+        });
+      } else {
+        // section veliya pona reset
+        items.forEach((item) => {
+          item.classList.remove("animate");
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  },
+);
+
+observer.observe(education);
+//loading
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  // small delay for smooth feel
+  setTimeout(() => {
+    loader.classList.add("opacity-0");
+
+    document.body.classList.remove("overflow-hidden");
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 700);
+  }, 1500);
+});
+
