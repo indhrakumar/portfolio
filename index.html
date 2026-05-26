@@ -128,9 +128,87 @@
         color: yellow;
         font-size: 30px;
       }
+      /*education*/
+
+      .timeline-dot,
+      .timeline-line,
+      .edu-card {
+        opacity: 0;
+      }
+
+      .timeline-dot.animate {
+        animation: dotGlow 0.2s ease forwards;
+      }
+
+      .timeline-line.animate {
+        animation: lineGrow 0.2s ease forwards;
+        transform-origin: top;
+      }
+
+      .edu-card.animate {
+        animation: cardShow 0.2s ease forwards;
+      }
+
+      @keyframes dotGlow {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+          box-shadow: 0 0 0 cyan;
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(1.3);
+          box-shadow: 0 0 40px cyan;
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+          box-shadow: 0 0 20px cyan;
+        }
+      }
+
+      @keyframes lineGrow {
+        0% {
+          opacity: 1;
+          transform: scaleY(0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+
+      @keyframes cardShow {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
-  <body class="bg-black">
+  <body class="bg-black overflow-hidden">
+     <!-- LOADER -->
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] bg-black flex items-center justify-center transition-all duration-700">
+      <div class="relative w-[70px] h-[70px]">
+        <!-- spinning ring -->
+        <div
+          class="absolute inset-0 rounded-full border-4 border-cyan-500 border-t-transparent border-b-transparent animate-spin shadow-[0_0_25px_cyan]"></div>
+
+        <!-- center glow -->
+        <div
+          class="absolute inset-[35%] rounded-full bg-cyan-400 shadow-[0_0_40px_cyan] animate-pulse"></div>
+      </div>
+    </div>
     <!-- NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-[9999]">
       <div
