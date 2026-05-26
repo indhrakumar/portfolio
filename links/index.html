@@ -113,12 +113,10 @@
       function ans() {
         let div = document.getElementById("toast");
         div.style.display = "block";
-        div.innerHTML = `${secret}`;
+        div.innerHTML = secret.join(" ");
         setTimeout(() => {
           div.style.display = "none";
         }, 2000);
-
-        console.log(secret);
       }
       function generateNumber() {
         let digits = "0123456789".split("");
